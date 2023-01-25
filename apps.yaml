@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2023-01-25T03:36:20Z"
+  generation: 15
+  name: jenkins
+  namespace: argocd
+  resourceVersion: "1242889"
+  uid: 8fb3430a-c3d4-4f90-a4f7-dc9a0f400c45
+project: default
+source:
+  repoURL: 'https://aliaksandrdub.github.io/jenkinshelm/'
+  targetRevision: 0.1.0
+  chart: jenkins
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: ci_cd
+syncPolicy:
+  automated: {}
+  ---
+  
